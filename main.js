@@ -25,7 +25,6 @@
   const noResult = document.getElementById('noResult');
   const noMsg = document.getElementById('noMsg');
   const bearEmoji = document.getElementById('bearEmoji');
-  const sadBears = ['😤','😠','😡','🔪','💀'];
 
   function handleNo() {
     noScale = Math.max(0, noScale - 0.18);
@@ -38,14 +37,14 @@
     noMsg.textContent = noCount < noMessages.length
       ? noMessages[noCount] + " Stop messing with me and say yes 🔪"
       : "Fuck you again ! ";
-    bearEmoji.textContent = sadBears[Math.min(noCount, sadBears.length - 1)];
+    bearEmoji.innerHTML = `<img src="images/among.jpeg" style="width:clamp(4rem,16vw,6rem); height:auto; border-radius:12px;">`;
     noCount++;
   }
 
   function handleYes() {
     document.getElementById('btnArea').style.display = 'none';
     noResult.classList.remove('active');
-    bearEmoji.textContent = '🥰';
+    bearEmoji.innerHTML = `<img src="images/happy.png" style="width:clamp(4rem,16vw,6rem); height:auto; border-radius:12px;">`;
     bearEmoji.style.animation = 'none';
     bearEmoji.style.fontSize = 'clamp(5rem, 20vw, 8rem)';
     document.getElementById('yesResult').classList.add('active');
