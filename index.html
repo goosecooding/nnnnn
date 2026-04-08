@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine</title>
     <link rel="stylesheet" href="style.css">
-    <title>Will you be my Valentine ?</title>
 </head>
 <body>
-    <div class="mother">
-        <h1>Will you be my Valentine ? 🌸</h1>
+    <canvas id="confetti-canvas"></canvas>
 
-        <div class="result" id="result">
-            <p id="resultText"></p>
-            <img src="images/among.jpeg" alt="">
-        </div>
+<div id="val-root">
+  <div class="floating-hearts" id="bgHearts"></div>
 
-        <div class="buttons">
-            <button class="Yes" onclick="YesBtn()">Yes</button>
-            <button class="No" onclick="NoBtn()">No</button>
-        </div>
+  <div class="val-card">
+    <h1 class="val-title">Will you be my Valentine?</h1>
+    <p class="val-subtitle">Choose wisely 🌸</p>
+
+    <span class="bear-wrap" id="bearEmoji">🐻</span>
+
+    <div class="result-area" id="noResult">
+      <span class="result-msg" id="noMsg">Stop messing with me and say yes 🔪</span>
     </div>
+
+    <div class="yes-result" id="yesResult">
+      <span class="big-emoji">🎉💖🌸</span>
+      <p class="yes-msg">Good choice! I knew it!</p>
+      <p class="yes-sub">You just made the best decision of your life </p>
+    </div>
+
+    <div class="buttons" id="btnArea">
+      <button class="btn-yes" onclick="handleYes()">Yes 💖</button>
+      <button class="btn-no" id="noBtn" onclick="handleNo()">No</button>
+    </div>
+  </div>
+</div>
 
     <script src="main.js"></script>
 </body>
